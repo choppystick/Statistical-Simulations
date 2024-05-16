@@ -56,10 +56,10 @@ for (i in 1:sim_size) {
   }
 
 hist(simulated_QB, main="Between-Groups Sum of Squares", xlab="Value", freq=FALSE)
-curve(dchisq(x, df=qr(simulated_QB)$rank, add=TRUE, col="red")
+curve(dchisq(x, df=qr(simulated_QB)$rank), add=TRUE, col="red")
 
 hist(simulated_QW, main="Within-Groups Sum of Squares", xlab="Value", freq=FALSE)
-curve(dchisq(x, df=qr(simulated_QW)$rank, add=TRUE, col="red")
+curve(dchisq(x, df=qr(simulated_QW)$rank), add=TRUE, col="red")
 
 # Test for independence
 cor.test(simulated_QB, simulated_QW)
